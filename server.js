@@ -1,7 +1,8 @@
-var express=require('express');
-var app=express();
-var server=require("http").createServer(app);
-var io=require("socket.io")(server);
+var express = require("express");
+var app = express();
+var server = require("http").Server(app);
+var io = require("socket.io")(server);
+
 
 app.get('/',function(req,res, next){
 	res.sendFile(__dirname+"/public/index.html");
@@ -9,13 +10,12 @@ app.get('/',function(req,res, next){
 
 app.use(express.static("public"));
 
-io.on("connection",function(client){
-console.log("connected");
-
-client.on("join",function(data){
-	console.log(data);
+io.on('connection', function(client){
+  console.log('user connected');
+  
+  client.on("join", function(data){
+    console.log(data);
+  });
 });
 
-});
-
-app.listen(3000);
+server.listen(3000)
