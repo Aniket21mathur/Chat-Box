@@ -4,18 +4,19 @@
 	<title>Chat box</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js">
-    </script>
+ 
     <script src="client.js"></script>
 </head>
 <body>
 	<h1>Chat here!</h1>
-	<form>
+	
 		<input type="text" id="message" placeholder="Message">
-		<input type="submit" value="Send">
-	</form>
+		
+	
+	<input type="submit" value="Send" id="sendmessage" 
+		>
 	<ul id="thread"></ul>
 	
 		

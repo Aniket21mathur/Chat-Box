@@ -16,6 +16,11 @@ io.on('connection', function(client){
   client.on("join", function(data){
     console.log(data);
   });
+
+  client.on("messages",function(data){
+  	client.emit("thread", data);
+  	client.broadcast.emit("thread", data);
+  });
 });
 
-server.listen(3000)
+server.listen(3000);
